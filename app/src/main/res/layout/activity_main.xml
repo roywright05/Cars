@@ -6,18 +6,36 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/pacifichighway"
+    android:scrollbars="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/bannerText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Wonderful World of Cars."
-        android:textStyle="bold"
-        android:background="#f2f6f5"
-        android:layout_gravity="center_horizontal"
-        android:textColor="#af0404"
-        android:textSize="30sp"
-         />
+        <TextView
+            android:id="@+id/bannerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="#f2f6f5"
+            android:padding="@dimen/size_8"
+            android:text="Wonderful World of Cars."
+            android:textColor="#af0404"
+            android:textSize="@dimen/text_32"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/btnEnter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginVertical="350dp"
+                android:background="#93b5b3"
+                android:onClick="onClick"
+                android:text="Enter"
+                android:textColor="#fff" />
+        </RelativeLayout>
+    
 
 </LinearLayout>

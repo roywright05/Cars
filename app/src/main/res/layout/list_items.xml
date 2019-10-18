@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/size_16">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/size_20"
+        android:layout_margin="@dimen/size_8">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivCar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_150"
+                android:background="@drawable/ic_launcher_background"/>
+            <TextView
+                android:id="@+id/tvCarName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/size_8"
+                android:layout_below="@+id/ivCar"
+                android:text="@string/yearmakemodel"
+                android:textSize="@dimen/text_22"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tvCarDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvCarName"
+                android:text="@string/description"
+                android:textSize="@dimen/size_20"
+                android:textStyle="italic"
+                android:padding="@dimen/size_4"
+                />
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

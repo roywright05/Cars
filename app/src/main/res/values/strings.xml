@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Cars</string>
+    <string name="yearmakemodel">Year Make Model</string>
+    <string name="description">Here is a short excerpt of what you will get with a purchase of this vehicle. Enjoy!</string>
 </resources>

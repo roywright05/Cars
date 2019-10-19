@@ -45,7 +45,16 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
 
                 int position = Integer.parseInt(etInsert.getText().toString());
 
-                addCar(position);
+                if (position % 2 == 0){
+                    addCar(position);
+                }else if (position == 3){
+
+                    addTruck(position);
+                }else{
+
+                    addSuv(position);
+                }
+
             }
         });
 
@@ -111,13 +120,43 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
 
             mCarDetails.add(position,
                     new CarDetails
-                            (R.drawable.ford_f150,
-                                    "2019 Ford F-150",
-                                    "The best selling pickup truck in America. " +
-                                            "The F-150 has been the standard bearer for over " +
-                                            "two decades.\nMSRP: $32,500"));
+                            (R.drawable.tesla,
+                                    "2020 Tesla Model T",
+                                    "Elon Musk's signature brand comes with " +
+                                            "improved technology, a quiet engine, and a beautiful " +
+                                            "interior.  Oh, did we mention the Lamborghini doors? " +
+                                            "\nMSRP: $65,000"));
+
             mAdapter.notifyItemInserted(position);
 
+    }
+
+    public void addTruck(int position){
+
+        mCarDetails.add(position,
+                new CarDetails
+                        (R.drawable.ford_f150,
+                                "2019 Ford F-150",
+                                "The gold standard for pick ups. " +
+                                        "The F-150 is a top seller, two decades running. " +
+                                        "With unrivaled towing ability and legendary reliability " +
+                                        "makes this a must have. \nMSRP: $34,550"));
+        mAdapter.notifyItemInserted(position);
+    }
+
+    public void addSuv(int position){
+
+        mCarDetails.add(position, new CarDetails(
+                R.drawable.porsche,
+                "2020 Porche Macan",
+                "The luxury SUV to top all others. The Macan is " +
+                        "impeccable from bumper to bumper.  With its powerful engine " +
+                        "smooth ride and a plethora of luxurious features, this SUV is " +
+                        "where you want to spend your hard earned fortune. \n" +
+                        "MSRP: $50,500"
+        ));
+
+        mAdapter.notifyItemInserted(position);
     }
 
     public void removeCar(int position){

@@ -5,18 +5,24 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.example.cars.Model.CarDetails;
 import com.example.cars.R;
 
 import java.util.ArrayList;
 
-public class Main2Activity extends AppCompatActivity {
+public class Main2Activity extends AppCompatActivity implements View.OnClickListener {
 
     private ArrayList<CarDetails> mCarDetails;
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+
+    private Button remove, insert;
+    private EditText etInsert, etRemove;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +31,34 @@ public class Main2Activity extends AppCompatActivity {
 
         setContent();
         setArrayAdapter();
+        //setButtonClicks();
+
+        insert = findViewById(R.id.btnInsert);
+        remove = findViewById(R.id.btnRemove);
+
+        etInsert = findViewById(R.id.etInsert);
+        etRemove = findViewById(R.id.etRemove);
+
+        insert.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                int position = Integer.parseInt(etInsert.getText().toString());
+
+                addCar(position);
+            }
+        });
+
+        remove.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                int position = Integer.parseInt(etRemove.getText().toString());
+
+                removeCar(position);
+            }
+        });
+
     }
 
     public void setArrayAdapter() {
@@ -63,8 +97,56 @@ public class Main2Activity extends AppCompatActivity {
                         " us speed, style and practicality, all at a reasonable price. " +
                         "This Golf model comes with a 4-cylinder, 220hp engine. " +
                         "\nMSRP: $28,415") );
+    }
 
+    public void setButtonClicks(){
+        insert = findViewById(R.id.btnInsert);
+        insert.setOnClickListener(this);
 
+        remove = findViewById(R.id.btnRemove);
+        remove.setOnClickListener(this);
+    }
+
+    public void addCar(int position) {
+
+            mCarDetails.add(position,
+                    new CarDetails
+                            (R.drawable.ford_f150,
+                                    "2019 Ford F-150",
+                                    "The best selling pickup truck in America. " +
+                                            "The F-150 has been the standard bearer for over " +
+                                            "two decades.\nMSRP: $32,500"));
+            mAdapter.notifyItemInserted(position);
+
+    }
+
+    public void removeCar(int position){
+        mCarDetails.remove(position);
+        mAdapter.notifyItemRemoved(position);
+    }
+
+    @Override
+    public void onClick(View view) {
+
+//        setButtonClicks();
+//        etInsert = view.findViewById(R.id.etInsert);
+//        int position1 = Integer.parseInt(etInsert.getText().toString());
+//        etRemove = view.findViewById(R.id.etRemove);
+//        int position2 = Integer.parseInt(etRemove.getText().toString());
+//
+//        switch (view.getId()){
+//
+//            case R.id.btnInsert:
+//                addCar(position1);
+//                mAdapter.notifyItemInserted(position1);
+//                break;
+//            case R.id.btnRemove:
+//                removeCar(position2);
+//                break;
+//
+//                default:
+//                    break;
+  //      }
 
     }
 }

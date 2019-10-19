@@ -17,8 +17,8 @@
             android:background="#f2f6f5"
             android:padding="@dimen/size_8"
             android:text="Wonderful World of Cars."
-            android:textColor="#af0404"
-            android:textSize="@dimen/text_32"
+            android:textColor="@color/charcoal"
+            android:textSize="@dimen/text_26"
             android:textStyle="bold" />
 
         <RelativeLayout
@@ -30,7 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_marginVertical="350dp"
+                android:layout_marginVertical="200dp"
                 android:background="#93b5b3"
                 android:onClick="onClick"
                 android:text="Enter"

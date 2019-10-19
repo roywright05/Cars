@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.cars.Model.CarDetails;
 import com.example.cars.R;
@@ -129,6 +130,8 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
 
             mAdapter.notifyItemInserted(position);
 
+            Toast.makeText(this, "Tesla Model T added.", Toast.LENGTH_LONG).show();
+
     }
 
     public void addTruck(int position){
@@ -142,6 +145,8 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
                                         "With unrivaled towing ability and legendary reliability " +
                                         "makes this a must have. \nMSRP: $34,550"));
         mAdapter.notifyItemInserted(position);
+
+        Toast.makeText(this, "Ford F-150 added", Toast.LENGTH_LONG).show();
     }
 
     public void addSuv(int position){
@@ -157,6 +162,8 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
         ));
 
         mAdapter.notifyItemInserted(position);
+
+        Toast.makeText(this, "Porche Macan added", Toast.LENGTH_LONG).show();
     }
 
     public void removeCar(int position){

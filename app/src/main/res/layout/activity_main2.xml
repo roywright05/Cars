@@ -10,6 +10,31 @@
     tools:context=".View.Main2Activity"
     >
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_70"
+        android:background="@color/light_blue"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/rv_banner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose your car type"
+            android:textSize="@dimen/text_26"
+            android:textColor="#000"
+            android:layout_margin="@dimen/size_16" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circle_image"
+            android:layout_width="@dimen/size_80"
+            android:layout_height="@dimen/size_80"
+            android:src="@drawable/audirs4"
+            app:civ_border_color="#3c70a4"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/size_8"
+            app:civ_border_width="2dp"
+            />
+    </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
@@ -17,12 +42,13 @@
         android:layout_height="match_parent"
         android:scrollbars="vertical"
         android:layout_marginBottom="@dimen/size_70"
+        android:layout_marginTop="@dimen/size_70"
         />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/size_70"
-        android:background="@color/light_green"
+        android:background="@color/light_blue"
         android:layout_alignParentBottom="true">
 
         <Button

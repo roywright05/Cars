@@ -15,17 +15,18 @@ import com.example.cars.R;
 
 import java.util.ArrayList;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 
 public class CarAdapter extends RecyclerView.Adapter<CarAdapter.CarViewHolder> {
 
     private ArrayList<CarBodyTypes> carList;
 
-
-
     public static class CarViewHolder extends RecyclerView.ViewHolder{
 
         ImageView carImage;
         TextView tvCarModel, tvCarDetails;
+        CircleImageView mCircleImageView;
 
         public CarViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -33,6 +34,7 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.CarViewHolder> {
             carImage = itemView.findViewById(R.id.ivCar);
             tvCarModel = itemView.findViewById(R.id.tvCarName);
             tvCarDetails = itemView.findViewById(R.id.tvCarDescription);
+            mCircleImageView = itemView.findViewById(R.id.circle_image);
         }
     }
 
@@ -50,6 +52,7 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.CarViewHolder> {
 
         CarViewHolder carViewHolder = new CarViewHolder(view);
         return carViewHolder;
+
     }
 
     @Override
@@ -62,6 +65,7 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.CarViewHolder> {
         holder.carImage.setImageResource(details.getSmallImage());  //.setImageResource(details.getImageResource());
         holder.tvCarModel.setText(details.getCarBodyType());  //.setText(details.getCarModel());
         holder.tvCarDetails.setText(details.getCarCategory());  //.setText(details.getModelDescription());
+        //holder.mCircleImageView.setImageResource(R.drawable.audirs4);
 
     }
 

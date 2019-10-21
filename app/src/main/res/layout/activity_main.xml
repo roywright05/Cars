@@ -27,11 +27,11 @@
 
             <ImageButton
                 android:id="@+id/btnEnter"
-                android:layout_width="60dp"
-                android:layout_height="80dp"
+                android:layout_width="@dimen/size_80"
+                android:layout_height="@dimen/size_80"
                 android:layout_centerHorizontal="true"
                 android:layout_marginVertical="200dp"
-                android:background="@drawable/enter"
+                android:background="@drawable/car_front"
                 android:onClick="onClick"
                 android:text="Enter"
                 android:textColor="#fff" />

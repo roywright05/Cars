@@ -4,4 +4,9 @@
     <string name="description">Here is a short excerpt of what you will get with a purchase of this vehicle. Enjoy!</string>
     <string name="remove">Remove</string>
     <string name="insert">insert</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="carType">Car Body Style</string>
+    <string name="bodyType">Brief description of car category</string>
 </resources>

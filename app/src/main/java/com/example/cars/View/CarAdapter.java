@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.cars.Model.CarBodyTypes;
 import com.example.cars.Model.CarDetails;
 import com.example.cars.R;
 
@@ -17,7 +18,7 @@ import java.util.ArrayList;
 
 public class CarAdapter extends RecyclerView.Adapter<CarAdapter.CarViewHolder> {
 
-    private ArrayList<CarDetails> carList;
+    private ArrayList<CarBodyTypes> carList;
 
 
 
@@ -35,7 +36,7 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.CarViewHolder> {
         }
     }
 
-    public CarAdapter(ArrayList<CarDetails> carList) {
+    public CarAdapter(ArrayList<CarBodyTypes> carList) {
         this.carList = carList;
     }
 
@@ -54,11 +55,13 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.CarViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull CarViewHolder holder, int position) {
 
-        CarDetails details = carList.get(position);
+        CarBodyTypes details = carList.get(position);
 
-        holder.carImage.setImageResource(details.getImageResource());
-        holder.tvCarModel.setText(details.getCarModel());
-        holder.tvCarDetails.setText(details.getModelDescription());
+        //set get
+
+        holder.carImage.setImageResource(details.getSmallImage());  //.setImageResource(details.getImageResource());
+        holder.tvCarModel.setText(details.getCarBodyType());  //.setText(details.getCarModel());
+        holder.tvCarDetails.setText(details.getCarCategory());  //.setText(details.getModelDescription());
 
     }
 

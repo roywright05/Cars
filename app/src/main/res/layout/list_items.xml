@@ -1,46 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     app:cardCornerRadius="@dimen/size_20"
+    android:padding="@dimen/size_10"
     android:layout_margin="@dimen/size_8">
+
+    <RelativeLayout
+        android:id="@+id/small_image_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/size_8">
+
+        <ImageView
+            android:id="@+id/ivCar"
+            android:layout_width="@dimen/size_80"
+            android:layout_height="@dimen/size_80"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/size_8"
+           />
+
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/card_background"
-            android:padding="@dimen/size_20">
+            android:layout_toRightOf="@+id/ivCar"
+            android:padding="@dimen/size_5">
 
-            <ImageView
-                android:id="@+id/ivCar"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/size_150"
-                android:background="@color/card_background"/>
-            <TextView
-                android:id="@+id/tvCarName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/size_8"
-                android:layout_below="@+id/ivCar"
-                android:text="@string/yearmakemodel"
-                android:textSize="@dimen/text_22"
-                android:textStyle="bold"/>
 
-            <TextView
-                android:id="@+id/tvCarDescription"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tvCarName"
-                android:text="@string/description"
-                android:textSize="@dimen/size_20"
-                android:textStyle="italic"
-                android:padding="@dimen/size_4"
-                />
+
+                        <TextView
+                            android:id="@+id/tvCarName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/size_8"
+
+                            android:text="@string/carType"
+                            android:textColor="#454d66"
+                            android:textSize="@dimen/text_22"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/tvCarDescription"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvCarName"
+
+                            android:text="@string/bodyType"
+                            android:textSize="@dimen/text_16"
+                            android:textColor="#000"
+                            android:textStyle="italic"
+                            android:padding="@dimen/size_4"
+                            />
 
 
         </RelativeLayout>
+
+    </RelativeLayout>
+
 
 </androidx.cardview.widget.CardView>

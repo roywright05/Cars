@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    app:cardCornerRadius="@dimen/size_20"
+    android:layout_margin="@dimen/size_8">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/card_background"
+        android:padding="@dimen/size_20">
+
+        <ImageView
+            android:id="@+id/ivCar"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/size_150"
+            android:background="@color/card_background"/>
+        <TextView
+            android:id="@+id/tvCarName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/size_8"
+            android:layout_below="@+id/ivCar"
+            android:text="@string/yearmakemodel"
+            android:textSize="@dimen/text_22"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tvCarDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvCarName"
+            android:text="@string/description"
+            android:textSize="@dimen/size_20"
+            android:textStyle="italic"
+            android:padding="@dimen/size_4"
+            />
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

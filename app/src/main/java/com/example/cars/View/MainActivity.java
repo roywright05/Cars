@@ -6,12 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.example.cars.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button mButton;
+    private ImageButton mButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

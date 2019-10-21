@@ -16,6 +16,11 @@ public class CarBodyTypes {
         this.carCategory = carCategory;
     }
 
+    public void changeText1(String text){
+
+        carBodyType = text;
+    }
+
     public int getSmallImage() {
         return smallImage;
     }

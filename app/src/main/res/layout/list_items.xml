@@ -42,7 +42,7 @@
 
                             android:text="@string/carType"
                             android:textColor="#454d66"
-                            android:textSize="@dimen/text_22"
+                            android:textSize="@dimen/text_18"
                             android:textStyle="bold"/>
 
                         <TextView

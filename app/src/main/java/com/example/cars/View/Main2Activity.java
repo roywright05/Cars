@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,7 +21,7 @@ public class Main2Activity extends AppCompatActivity {
 
     private ArrayList<CarBodyTypes> mCarDetails;
     private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
+    private CarAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
     private Button remove, insert;
@@ -55,6 +56,16 @@ public class Main2Activity extends AppCompatActivity {
 
     }
 
+    public void changeItem(int position, String text){
+
+//        mCarDetails.get(position).changeText1(text);
+//        mAdapter.notifyItemChanged(position);
+
+        Intent intent = new Intent(this, MainActivity.class);
+
+        startActivity(intent);
+    }
+
     public void setArrayAdapter() {
 
         // Six lines of code can go here, but 5 are necessary
@@ -66,6 +77,16 @@ public class Main2Activity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(mLayoutManager);
         mAdapter = new CarAdapter(mCarDetails);
         mRecyclerView.setAdapter(mAdapter);
+
+        mAdapter.setOnItemClickListener(new CarAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+
+                changeItem(position, "Custom Body Type");
+
+
+            }
+        });
     }
 
     public void setContent() {

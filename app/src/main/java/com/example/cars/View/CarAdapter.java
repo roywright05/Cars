@@ -22,19 +22,44 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.CarViewHolder> {
 
     private ArrayList<CarBodyTypes> carList;
 
+    private OnItemClickListener mListener;
+    public interface OnItemClickListener{
+
+        void onItemClick(int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener){
+        this.mListener = listener;
+    }
+
     public static class CarViewHolder extends RecyclerView.ViewHolder{
 
         ImageView carImage;
         TextView tvCarModel, tvCarDetails;
         CircleImageView mCircleImageView;
 
-        public CarViewHolder(@NonNull View itemView) {
+        public CarViewHolder(@NonNull View itemView, final OnItemClickListener listener) {
             super(itemView);
 
             carImage = itemView.findViewById(R.id.ivCar);
             tvCarModel = itemView.findViewById(R.id.tvCarName);
             tvCarDetails = itemView.findViewById(R.id.tvCarDescription);
             mCircleImageView = itemView.findViewById(R.id.circle_image);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    if(listener != null){
+                        int position = getAdapterPosition();
+
+                        if(position != RecyclerView.NO_POSITION){
+
+                            listener.onItemClick(position);
+                        }
+                    }
+                }
+            });
         }
     }
 
@@ -50,7 +75,7 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.CarViewHolder> {
                 LayoutInflater.from(parent.getContext())
                         .inflate(R.layout.list_items, parent, false);
 
-        CarViewHolder carViewHolder = new CarViewHolder(view);
+        CarViewHolder carViewHolder = new CarViewHolder(view, mListener);
         return carViewHolder;
 
     }

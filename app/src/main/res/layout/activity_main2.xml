@@ -20,8 +20,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Choose your car type"
-            android:textSize="@dimen/text_26"
-            android:textColor="#000"
+            android:textSize="@dimen/text_22"
+            android:textColor="#454d66"
+            android:textStyle="bold"
             android:layout_margin="@dimen/size_16" />
 
         <de.hdodenhof.circleimageview.CircleImageView
